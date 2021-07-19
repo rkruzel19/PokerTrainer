@@ -1,15 +1,29 @@
 .homepage{
-    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 100%; */
 }
 
 .header{
-
+    background-color: goldenrod;
+    /* width: 100%; */
+    flex: 0 1 auto;
 }
 
 .side_panel{
-
+    background-color: chartreuse;
+    width: 20%;
+    flex: 0 1 auto;
+    /* align-items: stretch; */
 }
 
 .main_area{
-    
+    background-color: coral;
+    flex: 0 1 auto;
+    /* flex-grow: 2; */
+    /* align-items: stretch; */
+}
+
+body {
+    /* height: 100%; */
 }

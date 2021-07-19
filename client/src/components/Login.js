@@ -16,7 +16,8 @@ function Login(){
             password: userInfo.password,
             firstName: userInfo.firstName,
             lastName: userInfo.lastName,
-            email: userInfo.email
+            email: userInfo.email,
+            tournaments: "0"
         }}/>)
     }
 

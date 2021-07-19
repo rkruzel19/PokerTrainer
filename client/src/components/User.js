@@ -7,7 +7,7 @@ function User(props) {
     const [firstName, setFirstName] = useState(props.info.firstName)
     const [lastName, setLastName] = useState(props.info.lastName)
     const [email, setEmail] = useState(props.info.email)
-    const [tournaments, setTournaments] = useState("0") 
+    const [tournaments, setTournaments] = useState(props.info.tournaments) 
 
     return (
         <div>
@@ -16,7 +16,7 @@ function User(props) {
             <h3>firstName: {firstName}</h3>
             <h3>lastName: {lastName}</h3>
             <h3>email: {email}</h3>
-            <div>{tournaments}</div>
+            <h3>tournaments: {tournaments}</h3>
         </div>
     )
 }
