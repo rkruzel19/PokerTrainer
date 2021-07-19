@@ -1,0 +1,93 @@
+Project created 12/28/20
+
+
+1/1/21 
+- Changelog created 
+- Created basic Tournament, Hand, Player components
+- Added a tournament.txt file to directory for testing 
+- Created IgnitionMapper to read tournament.txt file and pull needed values using regex
+    - Then creates a Tournament component using pulled values
+    - Currently reads 1st line of Hand (tournament info) and pulls handId, tournamentId, timeStamp
+    - Simple display to show that its working
+
+1/4/21
+- Bug in IgnitionMapper when applying regex to fields that were empty due to bad rendering flow. 
+    - Fixed by adding "Upload File" button which imports the txt file, then creates fields, finally returns Tournament component
+
+1/5/21
+- Made Mappers folder in components. Tournament, Hand, and Player will have a Mapper to pull the necessary data from txt file and 
+  create the approriate component.
+- IgnitionMapper => TournamentMapper => HandMapper => PlayerMapper
+
+1/9/21
+- Implemented Tournament, Hand, and Player mapper classes. 
+- Added css to each to easily show on UI what text is from what component
+- Added regex to Hand and Player to start pulling data from textFile
+- Basic flow is complete. IGmapper calls TournyMapper calls HandMapper calls PlayerMapper. All goes back to overall Tournament component
+
+1/10/21
+- Imported ScheduledTournament.txt (multi-table tournament, more than 3 players per hand. ie different data set)
+- Can toggle between JackpotSNG and ScheduledTournament txt files using comments on imports in IgnitionMapper
+
+1/11/21
+- Made mappers more single responsibility. Before some player tasks were given to handMapper and hand tasks given to TournamentMapper. Now 
+  TournyMapper only knows tourny info, handMapper => hand info, PlayerMapper => player info
+- ***ALL MAPPERS DONE***
+  - mvp for all mappers done. pulls all necessary info from txt file and creates a Tournament component from it.
+- Made secondary setupRegex for when hand txt doesn't have a "Set dealer line". Found this problem in ScheduledTournament
+
+*** Long break, vacation, laptop broke, lost some data ***
+
+2/1/21
+- Got new laptop/environment going
+- Finished UI to easily read tournament hands
+- Basic mock UI and mapper done. Next = implementing users/accounts
+
+3/4/21
+- Created lot of new things to get users Implemented
+  - Welcome (welcome page, can login or create user)
+  - Login (component used for logging in)
+  - NewUser (controls creating new accounts)
+  - User (each individuals specific account)
+  - MockTournamentComp and MockUserDB (used to verify logic before persistance is added)
+  - Basic css for all needed
+- GOAL = 
+      - being able to type user info into login and check mockDB if user exists and if it does, displays info
+      - can create a new account (wont persist for now. thats next) then bring you to the new account's home page
+
+
+
+
+                                        ****  The Big Change  ****
+
+7/19/21
+- Created new repo PokerTranier (PT) to start the project (IgnitionHandAnalyzer, IHA) over and rebuit the structure
+- Divided app into client and server directories
+    - client holds all of the frontend logic and information the user will see and interact with
+    - server holds backend logic like sql calls and thigs you don't want user to be able to see 
+    - the 2 folders have their own dependencies and only know about each other by communicating through API calls
+- Connected the client(frontend), server(backend), and mysql database
+    - The frontend takes information from the user and sends it to the backend through an Axios call to a
+      port (localhost:3001) and a custom made API (ex localhost:3001/api/login). The backend hears this call by 
+      listening to port 3001, then takes the sent information and does whatever logic is required. Such as logging a 
+      user in. In this case, the backend would make a call to the sql database to verify the user exists and the login 
+      info is correct. Then it would return that users account information back to the frontend where the frontend will
+      display it for the user.
+- IHA was built with the mappers first. In PT, I set up all of the connections and am trying to start 
+  from the Welcome page.
+
+    - Welcome ---> Login ---> Validate ---> UserHomepage
+              ||
+              ||
+              ---> Create Account ---> Validate ---> UserHomepage
+
+    - Because of this, not all components from IHA have been moved over to PT because they're not needed yet (mainly mappers)
+
+** What's next**
+- MVC
+    - As it stands now, PT lacks the MVC design 
+    - make Controller classes and seperate components for better flow and reusability
+- Routes
+    - I believe React Router is necessary to navigate between pages (Welcome, Login, UserHomepage)
+
+
