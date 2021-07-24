@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import User from '../User'
+import { Link } from "react-router-dom"
 
 function NewUserPage(){
 
@@ -58,7 +59,10 @@ function NewUserPage(){
                     value={email}
                 />
             </div>
-            <button  >Create Account</button>
+            <button>Create Account</button>
+            <Link to="/">
+                <button>Back</button>
+            </Link>
         </div>
     )
 

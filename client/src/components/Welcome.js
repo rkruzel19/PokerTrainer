@@ -3,17 +3,21 @@ import Login from "./Login"
 import "../style/Welcome.css"
 import { useState } from 'react'
 import NewUserPage from "./view/NewUserPage"
+import { Link } from "react-router-dom"
 
 function Welcome(){
 
-    function handleClick(){
-        console.log("test")
-        return <NewUserPage/>
-    }
+    
 
     return (
         <div className="welcome">
-            <button onClick={handleClick}>Create Account</button>
+            <Link to="/login">
+                <button>Login</button>
+            </Link>
+            <Link to="/newuserpage">
+                <button>Create Account</button>
+            </Link>
+            
         </div>
     )
 

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Axios from 'axios'
 import User from "./User"
 import UserHomepage from "./UserHomepage"
+import { Link } from "react-router-dom"
 
 function Login(){
 
@@ -54,6 +55,9 @@ function Login(){
                     />
                 </div>
                 <button onClick={authenticateUser}>Login</button>
+                <Link to="/">
+                    <button>Back</button>
+                </Link>
             </div>
         ) 
     } else {

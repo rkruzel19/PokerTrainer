@@ -4,17 +4,17 @@ import NewUser from './components/NewUser';
 import User from './components/User';
 import NewUserPage from './components/view/NewUserPage';
 import Welcome from './components/Welcome';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
-    // <User info = {{
-    //   userName: "test2",
-    //   password: "whatever",
-    //   firstName: "Rob",
-    //   lastName: "Kruzel",
-    //   email: "rkruzel@gmail.com",
-    // }}/>
-    <Welcome/>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Welcome} exact />
+        <Route path="/login" component={Login} />
+        <Route path="/newuserpage" component={NewUserPage} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
