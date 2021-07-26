@@ -91,3 +91,16 @@ Project created 12/28/20
     - I believe React Router is necessary to navigate between pages (Welcome, Login, UserHomepage)
 
 
+7/24/21
+- Installed react-router-dom on the client side for page navigation
+- Hooked up the Welcome, Login, and NewUserPage to router
+    - Can now travel through them
+
+7/26/21 
+- Worked on css and layout of pages to get a basic UI structure.
+- For now will have:
+  - Header
+  - Navbar
+  - Main content 
+  - Footer
+- May add additional sidebar
