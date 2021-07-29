@@ -7,6 +7,8 @@ import Welcome from './components/Welcome';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import LoginPage from './components/view/LoginPage';
+import UserHome from './components/view/UserHome'
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
       <div className="main_content">
         <Switch>
           <Route path="/" component={Welcome} exact />
-          <Route path="/login" component={Login} />
-          <Route path="/newuserpage" component={NewUserPage} />
+          <Route path="/loginPage" component={LoginPage} />
+          <Route path="/newUserPage" component={NewUserPage} />
+          <Route path="/userHome" component={UserHome} />
         </Switch>
       </div>
       <div className="footer">

@@ -7,9 +7,6 @@ function UserHomepage(props) {
 
     return (
         <div className="homepage">
-            <div className="header">
-                <label>Train Your Poker Skills</label>
-            </div>
             <div className="side_panel">
                 <h3>Username: {user.userName}</h3>
                 <h3>Password: {user.password}</h3>

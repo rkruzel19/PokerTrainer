@@ -11,10 +11,10 @@ function Welcome(){
 
     return (
         <div className="welcome">
-            <Link to="/login">
+            <Link to="/loginPage">
                 <button>Login</button>
             </Link>
-            <Link to="/newuserpage">
+            <Link to="/newUserPage">
                 <button>Create Account</button>
             </Link>
             
