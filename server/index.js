@@ -25,6 +25,16 @@ app.post("/api/login", (req, res) => {
     })
 })
 
+app.get("api/getAllUsers", (req, res) => {
+    const sqlInsert = 'SELECT * FROM user'
+
+    db.query(sqlInsert, (err, result) => {
+        console.log(err)
+        console.log(result)
+        res.send(result)
+    })
+})
+
 app.post("/api/insert", (req, res) => {
 
     const userName = req.body.userName
